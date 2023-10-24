@@ -1,7 +1,0 @@
-{
-  "name": "katerina",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "library",
-  "sourceRoot": "libs/katerina/src",
-  "targets": {}
-}
