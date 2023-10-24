@@ -2,6 +2,8 @@ import {
   addProjectConfiguration,
   formatFiles,
   generateFiles,
+  readJson,
+  readProjectConfiguration,
   Tree,
 } from '@nx/devkit';
 import * as path from 'path';
@@ -19,6 +21,10 @@ export async function myGeneratorGenerator(
     targets: {},
   });
   generateFiles(tree, path.join(__dirname, 'files'), projectRoot, options);
+  const projConf = readProjectConfiguration(tree, 'mystand');
+  const projJson = readJson(tree, 'project.json');
+  console.log(JSON.stringify(projConf, null, 2));
+  console.log(JSON.stringify(projJson, null, 2));
   await formatFiles(tree);
 }
 
